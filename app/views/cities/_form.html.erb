@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :state_id %>
-    <%= form.text_field :state_id %>
+    <%= collection_select :city, :state_id, State.all, :id, :name %>
   </div>
 
   <div class="actions">
