@@ -1,14 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @city.name %>
-</p>
+<h1>Showing City</h1>
 
-<p>
-  <strong>State:</strong>
-  <%= @city.state.name %>
-</p>
-
-<%= link_to 'Edit', edit_city_path(@city) %> |
 <%= link_to 'Back', cities_path %>
+
+<div class="container">
+  <div class="form-group row">
+    <div class="col-sm-2">
+      <strong>Name:</strong>
+    </div>
+    <div class="col-sm-10">
+      <%= @city.name %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-2">
+      <strong>State:</strong>
+    </div>
+    <div class="col-sm-10">
+      <%= @city.state.name %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= link_to 'Edit', edit_city_path(@city), class: "btn btn-warning" %>
+  </div>
+
+</div>
