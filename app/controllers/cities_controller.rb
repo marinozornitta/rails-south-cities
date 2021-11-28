@@ -9,6 +9,12 @@ class CitiesController < ApplicationController
     @cities = City.all
   end
 
+  def search
+    @cities = City.where(nil)
+    filter_by_state_name if params[:city].present? && params[:city][:state].present?
+    filter_by_city_name_like if params[:name].present?
+  end
+
   # GET /cities/1 or /cities/1.json
   def show; end
 
@@ -67,5 +73,13 @@ class CitiesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def city_params
     params.require(:city).permit(:name, :state_id)
+  end
+
+  def filter_by_state_name
+    @cities = @cities.filter_by_state_name(params[:city][:state])
+  end
+
+  def filter_by_city_name_like
+    @cities = @cities.filter_by_city_name_like(params[:name])
   end
 end
