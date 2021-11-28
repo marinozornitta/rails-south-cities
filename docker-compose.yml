@@ -13,6 +13,8 @@ services:
       - .:/myapp
     ports:
       - "3000:3000"
+    environment:
+      - RUBYOPT=-W0
     depends_on:
       - db
 volumes:
