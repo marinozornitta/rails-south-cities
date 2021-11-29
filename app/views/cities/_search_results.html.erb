@@ -1,3 +1,4 @@
+<% if @cities.present? %>
 <table class="table table-reponsive table-sm table-hover">
   <thead class="thead-dark">
     <tr>
@@ -21,3 +22,8 @@
     <% end %>
   </tbody>
 </table>
+<% else %>
+<div class="alert alert-danger" role="alert">
+  No records were found that match your query! Please, <%= link_to 'try again', cities_path %>!
+</div>
+<% end %>
