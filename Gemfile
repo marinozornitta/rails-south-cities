@@ -36,11 +36,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Bootstrap Gem
-gem 'bootstrap'
+gem 'bootstrap', '4.1.3'
 # jQuery Gem
-gem 'jquery-rails'
+gem 'jquery-rails', '4.4.0'
 # PopperJs
-gem 'popper_js'
+gem 'popper_js', '1.16.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -49,7 +49,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Rubocop-Rails Gem
-  gem 'rubocop-rails', require: false
+  gem 'rubocop-rails', '2.12.4', require: false
+  # Factory Bot Rails Gem
+  gem 'factory_bot_rails', '~> 5.2.0'
+  # RSpec Gem
+  gem 'rspec-rails', '~> 4.1.2'
 end
 
 group :development do
@@ -67,6 +71,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  # Rails Controler Testing Gem
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
