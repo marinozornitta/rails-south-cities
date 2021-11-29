@@ -12,16 +12,29 @@ The database container will run on port 5432 (default port for PostgreSQL).
 
 To run this project you must have [Docker](https://docs.docker.com/engine/install/) installed and running.
 
-## Building and Running App
+## Building Application
 
-To build and start the application, run in your terminal:
-`$ docker-compose up [--build]`
+To build the application, run in your terminal:
+`$ docker-compose build`
 
 This command will automatically start the application container and database container.
 Use the option `--build` if it is the first time you are running the container.
 This option builds the container image.
 
-After that you can access the server through [http://localhost:3000](http://localhost:3000).
+## Database Setup
+
+Now it is necessary to setup the database and create, migrate and seed with initial records.
+To do that, run these three commands in your terminal:
+`$ docker-compose run web bundle exec rake db:create`
+`$ docker-compose run web bundle exec rake db:migrate`
+`$ docker-compose run web bundle exec rake db:seed`
+
+## Running Application
+
+To start the application, run in your terminal:
+`$ docker-compose up`
+
+You can access the server through [http://localhost:3000](http://localhost:3000).
 
 ## Running Tests
 
